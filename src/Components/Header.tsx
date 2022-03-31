@@ -7,6 +7,7 @@ import { borderRadius, flexbox } from '@mui/system';
 import { blue } from '@mui/material/colors';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const useStyles = makeStyles({
@@ -49,16 +50,18 @@ const useStyles = makeStyles({
 function Header() {
   const classes = useStyles()
 
+  const navigate = useNavigate()
+
   return (
     <div>
       <AppBar className={classes.appbar}>
         <Toolbar className={classes.appbar}>
           <div className={classes.elements}>
             {/**<Typography>Today: {format(new Date(), 'd MMMM Y')}</Typography>*/}
-            <Avatar className={classes.avatar} src="/Images/Logo.jpg" />
-            <Typography className={classes.navbarContent}>Unsere Etablisments</Typography>
-            <Typography className={classes.navbarContent}>Services und Dienstleistungen</Typography>
-            <Typography className={classes.navbarContent}>Unsere Dienstleister</Typography>
+            <Avatar className={classes.avatar} src="/Images/Logo.jpg" onClick={()=>navigate("/")}/>
+            <Typography className={classes.navbarContent} onClick={()=>navigate("/Etablisments")}>Unsere Etablisments</Typography>
+            <Typography className={classes.navbarContent} onClick={()=>navigate("/Services")}>Services und Dienstleistungen</Typography>
+            <Typography className={classes.navbarContent} onClick={()=>navigate("/Dienstleister")}>Unsere Dienstleister</Typography>
             <div className={classes.navbarContentPic}>
               <Typography className={classes.username} >Shrek</Typography>
               <Avatar className={classes.avatar} src="/Images/shrek.jpg" />
