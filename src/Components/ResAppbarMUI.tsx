@@ -115,9 +115,9 @@ const ResponsiveAppBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Open user settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt='User' src={shrekImage}/>
+                <Avatar alt='User' src={shrekImage} onClick={()=> {navigate("/LoginPage")}}/>
               </IconButton>
             </Tooltip>
             <Menu
