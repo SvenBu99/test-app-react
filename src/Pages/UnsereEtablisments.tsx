@@ -1,5 +1,6 @@
 import { makeStyles } from '@mui/styles'
 import React from 'react'
+import ContainerBox from '../Components/ContainerBox'
 import ContentBox from '../Components/ContentBox'
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
@@ -76,19 +77,19 @@ function UnsereEtablisments() {
 
                 Cras vitae laoreet mi. Curabitur at nunc odio. Donec vestibulum ornare tellus, at maximus mi dignissim sit amet. Aliquam ex enim, vehicula ut rutrum id, pellentesque id turpis. In sollicitudin cursus orci, vitae semper tortor volutpat a. Praesent volutpat commodo dictum. Curabitur molestie nunc nunc, vel faucibus ipsum facilisis non. In quam dolor, consequat sit amet magna a, ultrices auctor ex.</p>
 
-            <ContentBox image='Images/Puff_Red.PNG' alt='Edel Etablisment' header='Edel Etablisment' info='ajdio audh ad awui  diaio wio a daiw idoawi doh auhddbvjhxbvjh. Aliquam vel porta nisi. Proin mattis mi et iaculis molestie. Proin non metus lectus. Mauris quam lacus, elementum nec viverra et, ultrices eu enim. Ut nisi ex, porta sit amet diam at, posuere facilisis sem. Morbi tristique, odio eu hendrerit rutrum, lacus tellus consequat mi, vel tincidunt magna magna vitae ante. Nulla at urna nisl. Aliquam vulputate lectus vel augue lacinia, at varius sem convallis.
+            <ContainerBox image='Images/Puff_Red.PNG' alt='Edel Etablisment' header='Edel Etablisment' info='ajdio audh ad awui  diaio wio a daiw idoawi doh auhddbvjhxbvjh. Aliquam vel porta nisi. Proin mattis mi et iaculis molestie. Proin non metus lectus. Mauris quam lacus, elementum nec viverra et, ultrices eu enim. Ut nisi ex, porta sit amet diam at, posuere facilisis sem. Morbi tristique, odio eu hendrerit rutrum, lacus tellus consequat mi, vel tincidunt magna magna vitae ante. Nulla at urna nisl. Aliquam vulputate lectus vel augue lacinia, at varius sem convallis.
 
 Praesent aliquam suscipit turpis nec tincidunt. Nam ligula odio, bibendum eu augue a, fermentum congue sem. Proin tortor justo, accumsan vitae lacus hendrerit, hendrerit fermentum sapien. Sed ullamcorper lectus vitae tortor accumsan elementum dictum ac metus. Sed id ante suscipit, sollicitudin lectus ac, laoreet neque. Sed vehicula aliquam iaculis. Nulla vulputate neque vehicula, finibus risus non, tincidunt lacus. Sed at turpis vehicula tortor sollicitudin tempor. In hac habitasse platea dictumst. Ut in sodales tellus. Fusce sit amet neque in nisi varius tristique. Vivamus vitae vestibulum tellus. Sed molestie quam dui, ac lacinia tortor finibus at. Praesent sodales velit ac turpis hendrerit pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris condimentum sit amet felis ut hendrerit.
 
 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Das sfh magne uhfeui verde orus putchin sem ante amestori valetrude panteri vigelscui scupil penelo'/>
 
-            <ContentBox image='Images/Puff_Außen.PNG' alt='Ansicht von Außen' header='Unser Klassiker' info='ajdio audh ad awui  diaio wio a daiw idoawi doh auhddbvjhxbvjh. Aliquam vel porta nisi. Proin mattis mi et iaculis molestie. Proin non metus lectus. Mauris quam lacus, elementum nec viverra et, ultrices eu enim. Ut nisi ex, porta sit amet diam at, posuere facilisis sem. Morbi tristique, odio eu hendrerit rutrum, lacus tellus consequat mi, vel tincidunt magna magna vitae ante. Nulla at urna nisl. Aliquam vulputate lectus vel augue lacinia, at varius sem convallis.
+            <ContainerBox image='Images/Puff_Außen.PNG' alt='Ansicht von Außen' header='Unser Klassiker' info='ajdio audh ad awui  diaio wio a daiw idoawi doh auhddbvjhxbvjh. Aliquam vel porta nisi. Proin mattis mi et iaculis molestie. Proin non metus lectus. Mauris quam lacus, elementum nec viverra et, ultrices eu enim. Ut nisi ex, porta sit amet diam at, posuere facilisis sem. Morbi tristique, odio eu hendrerit rutrum, lacus tellus consequat mi, vel tincidunt magna magna vitae ante. Nulla at urna nisl. Aliquam vulputate lectus vel augue lacinia, at varius sem convallis.
 
                 Praesent aliquam suscipit turpis nec tincidunt. Nam ligula odio, bibendum eu augue a, fermentum congue sem. Proin tortor justo, accumsan vitae lacus hendrerit, hendrerit fermentum sapien. Sed ullamcorper lectus vitae tortor accumsan elementum dictum ac metus. Sed id ante suscipit, sollicitudin lectus ac, laoreet neque. Sed vehicula aliquam iaculis. Nulla vulputate neque vehicula, finibus risus non, tincidunt lacus. Sed at turpis vehicula tortor sollicitudin tempor. In hac habitasse platea dictumst. Ut in sodales tellus. Fusce sit amet neque in nisi varius tristique. Vivamus vitae vestibulum tellus. Sed molestie quam dui, ac lacinia tortor finibus at. Praesent sodales velit ac turpis hendrerit pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris condimentum sit amet felis ut hendrerit.
 
                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Das sfh magne uhfeui verde orus putchin sem ante amestori valetrude panteri vigelscui scupil penelo'/>
 
-<ContentBox image='Images/Puff_TH.PNG' alt='Ganz abgeranzter Puff' header='Technische Hochschule Nürnberg' info='ajdio audh ad awui  diaio wio a daiw idoawi doh auhddbvjhxbvjh. Aliquam vel porta nisi. Proin mattis mi et iaculis molestie. Proin non metus lectus. Mauris quam lacus, elementum nec viverra et, ultrices eu enim. Ut nisi ex, porta sit amet diam at, posuere facilisis sem. Morbi tristique, odio eu hendrerit rutrum, lacus tellus consequat mi, vel tincidunt magna magna vitae ante. Nulla at urna nisl. Aliquam vulputate lectus vel augue lacinia, at varius sem convallis.
+<ContainerBox image='Images/Puff_TH.PNG' alt='Ganz abgeranzter Puff' header='Technische Hochschule Nürnberg' info='ajdio audh ad awui  diaio wio a daiw idoawi doh auhddbvjhxbvjh. Aliquam vel porta nisi. Proin mattis mi et iaculis molestie. Proin non metus lectus. Mauris quam lacus, elementum nec viverra et, ultrices eu enim. Ut nisi ex, porta sit amet diam at, posuere facilisis sem. Morbi tristique, odio eu hendrerit rutrum, lacus tellus consequat mi, vel tincidunt magna magna vitae ante. Nulla at urna nisl. Aliquam vulputate lectus vel augue lacinia, at varius sem convallis.
 
 Praesent aliquam suscipit turpis nec tincidunt. Nam ligula odio, bibendum eu augue a, fermentum congue sem. Proin tortor justo, accumsan vitae lacus hendrerit, hendrerit fermentum sapien. Sed ullamcorper lectus vitae tortor accumsan elementum dictum ac metus. Sed id ante suscipit, sollicitudin lectus ac, laoreet neque. Sed vehicula aliquam iaculis. Nulla vulputate neque vehicula, finibus risus non, tincidunt lacus. Sed at turpis vehicula tortor sollicitudin tempor. In hac habitasse platea dictumst. Ut in sodales tellus. Fusce sit amet neque in nisi varius tristique. Vivamus vitae vestibulum tellus. Sed molestie quam dui, ac lacinia tortor finibus at. Praesent sodales velit ac turpis hendrerit pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris condimentum sit amet felis ut hendrerit.
 
@@ -107,6 +108,7 @@ Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
 
                 Proin sed congue velit, non tincidunt nisl. Das sfh magne uhfeui verde orus putchin sem ante amestori valetrude panteri vigelscui scupil penelop.
             </p>
+
             <Footer />
         </div>
 
