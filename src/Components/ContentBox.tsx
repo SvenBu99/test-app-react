@@ -35,17 +35,18 @@ const useStyles = makeStyles({
     width: '250px',
     height: '250px',
     display: 'inline-block',
-    verticalAlign: 'middle'
+    verticalAlign: 'center'
   },
   imgCol: {
-    textAlign: 'center',
-    width: '400%'
+    textAlign: 'center'
   },
   textCol: {
     textAlign: 'justify',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '2%'
+    padding: '2%', 
+    display: 'flex',
+    
 
   },
   root: {

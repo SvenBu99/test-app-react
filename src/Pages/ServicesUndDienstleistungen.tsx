@@ -5,6 +5,7 @@ import Header from '../Components/Header'
 import Title from '../Components/Title'
 import Modal from '../Components/Modal'
 import BasicModal from '../Components/BasicModal'
+import ResponsiveAppBar from '../Components/ResAppbarMUI'
 
 
 
@@ -88,8 +89,9 @@ function ServicesUndDienstleistungen() {
     console.log({ isOpen })
     return (
         <div>
-            <Header />
-            <Title datenInput='Unsere angebotenen Services und Dienstleistungen' sizeInput={1} />
+            {/**<Header />*/}
+            <ResponsiveAppBar />
+            <Title datenInput='Unsere Services und Dienste' sizeInput={1} />
             <p className={classes.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate vel lacus sed vestibulum. Curabitur tempus porttitor nisl sit amet congue. Vestibulum vestibulum interdum magna eu ullamcorper. In semper rutrum orci, vitae varius urna maximus elementum. Duis mollis tempor eros. Proin luctus, purus eu fermentum feugiat, diam ante auctor tellus, ut tristique nisi quam tempus lorem. Etiam rhoncus quam ut vehicula porta. Integer eu odio sem. In ultrices iaculis urna, ut suscipit metus vehicula ac. Etiam gravida tortor vel scelerisque semper. Integer viverra, enim vitae ullamcorper tincidunt, felis magna congue enim, in congue felis arcu a ex. Pellentesque arcu risus, semper id lacus quis, congue egestas erat.
 
                 Aliquam vel porta nisi. Proin mattis mi et iaculis molestie. Proin non metus lectus. Mauris quam lacus, elementum nec viverra et, ultrices eu enim. Ut nisi ex, porta sit amet diam at, posuere facilisis sem. Morbi tristique, odio eu hendrerit rutrum, lacus tellus consequat mi, vel tincidunt magna magna vitae ante. Nulla at urna nisl. Aliquam vulputate lectus vel augue lacinia, at varius sem convallis.

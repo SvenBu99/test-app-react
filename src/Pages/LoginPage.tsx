@@ -5,6 +5,7 @@ import Header from '../Components/Header'
 import Title from '../Components/Title'
 import Modal from '../Components/Modal'
 import Login from '../Components/Login'
+import ResponsiveAppBar from '../Components/ResAppbarMUI'
 
 
 
@@ -70,7 +71,8 @@ function LoginPage() {
     const [isOpen, setIsOpen] = useState(false)
     return (
         <div>
-            <Header />
+            {/**<Header />*/}
+            <ResponsiveAppBar />
             <Title datenInput='Login oder Registrierung für Premium-Content' sizeInput={1} />
             <p className={classes.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate vel lacus sed vestibulum. Curabitur tempus porttitor nisl sit amet congue. Vestibulum vestibulum interdum magna eu ullamcorper. In semper rutrum orci, vitae varius urna maximus elementum. Duis mollis tempor eros. Proin luctus, purus eu fermentum feugiat, diam ante auctor tellus, ut tristique nisi quam tempus lorem. Etiam rhoncus quam ut vehicula porta. Integer eu odio sem. In ultrices iaculis urna, ut suscipit metus vehicula ac. Etiam gravida tortor vel scelerisque semper. Integer viverra, enim vitae ullamcorper tincidunt, felis magna congue enim, in congue felis arcu a ex. Pellentesque arcu risus, semper id lacus quis, congue egestas erat.
 

@@ -10,6 +10,7 @@ import { Router } from 'react-router-dom';
 import Title from '../Components/Title';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import ResponsiveAppBar from '../Components/ResAppbarMUI';
 
 
 const useStyles = makeStyles({
@@ -45,7 +46,8 @@ function App() {
   return (
     <div className="App">
       
-      <Header />
+      {/**<Header />*/}
+      <ResponsiveAppBar />
       <Title datenInput='Die TH Experience' sizeInput={1} />
       <div className={classes.cnt}>
         <button className={classes.btn} onClick={kotButton}>Test</button>

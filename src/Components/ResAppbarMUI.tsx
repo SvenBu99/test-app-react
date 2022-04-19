@@ -11,10 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 import { makeStyles } from '@mui/styles'
 import shrekImage from '../Backend/Images/shrek.jpg'
+import { Margin } from '@mui/icons-material';
 
 const pages = ['Unsere Etablisments', 'Services und Dienstleistungen', 'Unsere Dienstleister'];
 const settings = ['Account', 'Logout'];
@@ -44,7 +45,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor: 'rgba(150,25,15,1)', padding: '0px !important'}}>
+    <AppBar position="static" sx={{backgroundColor: 'rgba(150,25,15,1)', padding: '0px !important', marginBottom: '40px'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -86,7 +87,7 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={()=> {navigate(`/${page}`)}} sx={{ backgroundColor: 'rgba(150,25,25,1)', color: 'white', '&:hover': {backgroundColor: 'rgba(180,45,45,1)', borderRadius: 30, fontSize: 22}}}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -104,7 +105,7 @@ const ResponsiveAppBar = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={() => {navigate("/LoginPage")}}
+                onClick={() => {navigate(`/${page}`)}}
                 sx={{ my: 2, color: 'white', display: 'block' , '&:hover': {backgroundColor: 'rgba(180,45,45,1)', borderRadius: 30, fontSize: 22},
               paddingLeft: '100px', paddingRight: '100px' }}
               >
@@ -114,9 +115,9 @@ const ResponsiveAppBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Open user settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt='User' src={shrekImage}/>
+                <Avatar alt='User' src={shrekImage} onClick={()=> {navigate("/LoginPage")}}/>
               </IconButton>
             </Tooltip>
             <Menu
