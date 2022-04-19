@@ -4,12 +4,12 @@ import Footer from '../Components/Footer'
 import Header from '../Components/Header'
 import Title from '../Components/Title'
 import Modal from '../Components/Modal'
-import BasicModal from '../Components/BasicModal'
+import Login from '../Components/Login'
 
 
 
 const useStyles = makeStyles({
-
+   
     elements: {
         display: 'flex',
         justifyContent: 'space-between',
@@ -40,7 +40,7 @@ const useStyles = makeStyles({
         fontSize: 30,
         backgroundColor: 'darkred',
         '&:hover': {
-            backgroundColor: 'rgba(150,75,15,1)'
+            backgroundColor: 'rgba(150,75,15,1)'  
         },
         alignContent: 'center',
         textAlign: 'center',
@@ -50,46 +50,28 @@ const useStyles = makeStyles({
         transform: 'translate(-50%,-50%)',
         padding: '25px',
         zIndex: 1000,
-        marginTop: '50px'
+        marginTop: '30px'
 
     },
     modal: {
+        position: 'fixed',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%,-50%)',
-        backgroundColor: 'rgba(180,25,25,1)',
-        color: 'black',
+        backgroundColor: '#FFF',
         padding: '50px',
         zIndex: 1000
-    },
-    BasicModal: {
-
-    },
-    link: {
-        textDecoration: 'none',
-        color: 'black',
-        textAlign: 'center',
-        marginTop: '20px',
-        paddingTop: '20px',
-        fontSize: 30,
-        margin: '0.3%',
-        paddingLeft: '6.5%',
-        paddingRight: '6.5%',
     }
 })
 
 
-function ServicesUndDienstleistungen() {
+function LoginPage() {
     const classes = useStyles()
     const [isOpen, setIsOpen] = useState(false)
-    const subject = "HalliHallo"
-    const body = "Das ist ein Test, %0D%0A%0DLucas Skateboard stinkt nach Knoblauch  %0D%0A%0DBeste Grüße %0DBven Sudig"
-
-    console.log({ isOpen })
     return (
         <div>
             <Header />
-            <Title datenInput='Unsere angebotenen Services und Dienstleistungen' sizeInput={1} />
+            <Title datenInput='Login oder Registrierung für Premium-Content' sizeInput={1} />
             <p className={classes.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate vel lacus sed vestibulum. Curabitur tempus porttitor nisl sit amet congue. Vestibulum vestibulum interdum magna eu ullamcorper. In semper rutrum orci, vitae varius urna maximus elementum. Duis mollis tempor eros. Proin luctus, purus eu fermentum feugiat, diam ante auctor tellus, ut tristique nisi quam tempus lorem. Etiam rhoncus quam ut vehicula porta. Integer eu odio sem. In ultrices iaculis urna, ut suscipit metus vehicula ac. Etiam gravida tortor vel scelerisque semper. Integer viverra, enim vitae ullamcorper tincidunt, felis magna congue enim, in congue felis arcu a ex. Pellentesque arcu risus, semper id lacus quis, congue egestas erat.
 
                 Aliquam vel porta nisi. Proin mattis mi et iaculis molestie. Proin non metus lectus. Mauris quam lacus, elementum nec viverra et, ultrices eu enim. Ut nisi ex, porta sit amet diam at, posuere facilisis sem. Morbi tristique, odio eu hendrerit rutrum, lacus tellus consequat mi, vel tincidunt magna magna vitae ante. Nulla at urna nisl. Aliquam vulputate lectus vel augue lacinia, at varius sem convallis.
@@ -109,21 +91,7 @@ function ServicesUndDienstleistungen() {
                 Curabitur bibendum, nibh sit amet facilisis volutpat, arcu diam egestas nulla, vitae cursus augue nibh vitae quam. Fusce sit amet rhoncus sapien, vitae ornare arcu. Ut vel diam id turpis sollicitudin placerat non ac arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse placerat neque elit. Fusce augue est, varius non nisi ac, molestie molestie justo. Pellentesque quis faucibus urna. Praesent dui odio, dignissim eu enim eget, lacinia porta turpis. Suspendisse nec erat vitae arcu bibendum pharetra nec a tellus. Ut vitae egestas magna. Fusce sed dictum nisi. Pellentesque eget orci ac turpis ullamcorper convallis. In lobortis ex sed nibh feugiat facilisis.
 
                 Cras vitae laoreet mi. Curabitur at nunc odio. Donec vestibulum ornare tellus, at maximus mi dignissim sit amet. Aliquam ex enim, vehicula ut rutrum id, pellentesque id turpis. In sollicitudin cursus orci, vitae semper tortor volutpat a. Praesent volutpat commodo dictum. Curabitur molestie nunc nunc, vel faucibus ipsum facilisis non. In quam dolor, consequat sit amet magna a, ultrices auctor ex.</p>
-            <div className={classes.enum}>
-                <li className={classes.enumElem}> Donec vestibulum ornare tellus, Testo Mesto keine Gewährleistung</li>
-                <li className={classes.enumElem}> Donec vestibulum ornare tellus, Testo Mesto keine Gewährleistung</li>
-                <li className={classes.enumElem}> Donec vestibulum ornare tellus, Testo Mesto keine Gewährleistung</li>
-                <li className={classes.enumElem}> Donec vestibulum ornare tellus, Testo Mesto keine Gewährleistung</li>
-                <br />
-                <a className={classes.link} href={`mailto:luca.nicol2@gmx.de?subject=${subject}&body=${body}`}>Send Email To Luca</a>
-                <br />
-                <br/>
-                <BasicModal open={isOpen} title="Please login or create a new account" onClose={() => setIsOpen(false)} isFooter={false} />
-
-            </div>
-
-
-
+            <Login/>
             <p className={classes.text}>Phasellus hendrerit risus sed risus feugiat egestas. Aenean mollis, nisi non rutrum pretium, massa turpis ornare nibh, sit amet ornare risus ante vel justo. Cras ut lorem ut ex sodales finibus. Fusce ut quam in lorem blandit volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi rhoncus cursus metus, at blandit turpis porta nec. Mauris finibus porttitor purus id mattis. Quisque ultricies nunc ligula, at elementum felis fringilla a. Nulla vitae eros porta, placerat nisi rhoncus, pulvinar ante. Duis sed gravida tellus. Sed egestas mollis magna, quis semper ex. Mauris faucibus hendrerit vulputate. Pellentesque quis erat maximus, venenatis enim vel, aliquam felis. Nulla gravida est ac risus dapibus, sed gravida libero venenatis.
 
                 Curabitur bibendum, nibh sit amet facilisis volutpat, arcu diam egestas nulla, vitae cursus augue nibh vitae quam. Fusce sit amet rhoncus sapien, vitae ornare arcu.</p>
@@ -133,4 +101,4 @@ function ServicesUndDienstleistungen() {
     )
 }
 
-export default ServicesUndDienstleistungen
+export default LoginPage

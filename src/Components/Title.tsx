@@ -9,27 +9,27 @@ const useStyles = makeStyles({
   title: {
     textDecoration: 'bold',
     position: 'relative',
-    marginBottom: 20,
+    marginBottom: 40,
     textAlign: 'center',
-    marginTop: 120,
+    marginTop: 125,
     fontSize: 50,
     fontFamily: 'Montserrat'
   },
   titleTwo: {
     textDecoration: 'bold',
     position: 'relative',
-    marginBottom: 20,
+    marginBottom: 40,
     textAlign: 'center',
-    marginTop: 120,
+    marginTop: 125,
     fontSize: 38,
     fontFamily: 'Montserrat'
   },
   titleThree: {
     textDecoration: 'bold',
     position: 'relative',
-    marginBottom: 20,
+    marginBottom: 40,
     textAlign: 'center',
-    marginTop: 120,
+    marginTop: 125,
     fontSize: 30,
     fontFamily: 'Montserrat'
   }

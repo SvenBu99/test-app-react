@@ -19,6 +19,7 @@ import Startseite from './Pages/Startseite'
 import UnsereEtablisments from './Pages/UnsereEtablisments';
 import UnsereDienstleister from './Pages/UnsereDienstleister';
 import ServicesUndDienstleistungen from './Pages/ServicesUndDienstleistungen';
+import LoginPage from './Pages/LoginPage';
 
 const useStyles = makeStyles({
   btn: {
@@ -64,6 +65,7 @@ function App() {
         <Route path="/Etablisments" element={<UnsereEtablisments/>}/>
         <Route path="/Dienstleister" element={<UnsereDienstleister/>}/>
         <Route path="/Services" element={<ServicesUndDienstleistungen/>}/>
+        <Route path="/LoginPage" element={<LoginPage/>}/>
 
       </Routes>
     </BrowserRouter>

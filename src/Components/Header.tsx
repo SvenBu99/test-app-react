@@ -1,7 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
 import { AppBar, Toolbar, Typography } from '@mui/material'
-import format from 'date-fns/format'
 import { Avatar } from '@mui/material';
 import { borderRadius, flexbox } from '@mui/system';
 import { blue } from '@mui/material/colors';
@@ -44,6 +43,9 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: "100%"
+  },
+  root:{
+    width: '100%'
   }
 })
 
@@ -53,16 +55,15 @@ function Header() {
   const navigate = useNavigate()
 
   return (
-    <div>
+    <div className={classes.root}>
       <AppBar className={classes.appbar}>
         <Toolbar className={classes.appbar}>
           <div className={classes.elements}>
-            {/**<Typography>Today: {format(new Date(), 'd MMMM Y')}</Typography>*/}
             <Avatar className={classes.avatar} src="/Images/Logo.jpg" onClick={()=>navigate("/")}/>
             <Typography className={classes.navbarContent} onClick={()=>navigate("/Etablisments")}>Unsere Etablisments</Typography>
             <Typography className={classes.navbarContent} onClick={()=>navigate("/Services")}>Services und Dienstleistungen</Typography>
             <Typography className={classes.navbarContent} onClick={()=>navigate("/Dienstleister")}>Unsere Dienstleister</Typography>
-            <div className={classes.navbarContentPic}>
+            <div className={classes.navbarContentPic} onClick={()=>navigate("/LoginPage")}>
               <Typography className={classes.username} >Shrek</Typography>
               <Avatar className={classes.avatar} src="/Images/shrek.jpg" />
             </div>

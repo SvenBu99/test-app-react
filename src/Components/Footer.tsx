@@ -1,43 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { makeStyles } from '@mui/styles'
 import { AppBar, Grid, Toolbar, Typography } from '@mui/material'
 import { Avatar } from '@mui/material';
 import { Container } from '@mui/material';
 import { Box } from '@mui/material';
+import {Link, Route, useNavigate} from 'react-router-dom';
+import { useState } from 'react';
+import Modal from './Modal';
+import BasicModal from './BasicModal';
 
-import { Link, useNavigate } from 'react-router-dom';
 
 
 
 
 const useStyles = makeStyles({
-    avatar: {
-        margin: 20
-    },
-    username: {
-        margin: 10,
-        textAlign: 'center',
-        fontSize: 60
-    },
-    appbar: {
-
-        backgroundColor: 'darkgray',
-        position: 'absolute'
-    },
-    navbarContent: {
-        paddingLeft: 40,
-        paddingRight: 40,
-        fontSize: 40,
-        '&:hover': {
-            backgroundColor: 'rgba(50,25,15,1)',
-            borderRadius: 30,
-            fontSize: 20
-        }
-    },
-    navbarContentPic: {
-        display: 'flex',
-        alignItems: 'center'
-    },
     elements: {
         display: 'flex',
         justifyContent: 'space-between',
@@ -51,12 +27,29 @@ const useStyles = makeStyles({
     },
     footer: {
         marginTop: '5%'
+    },
+    linkBox: {
+        marginTop: '4%',
+        marginBottom: '2%'
+    },
+    links: {
+        color: 'rgba(150,25,15,1)',
+        textDecoration: 'none'
+    },
+    btn: {
+        color: 'white',
+        border: 'none',
+        backgroundColor: 'inherit',
+        cursor: 'pointer',
+        fontFamily: 'Montserrat',
+        fontSize: 18
     }
 })
 
 function Footer() {
     const classes = useStyles()
     const navigate = useNavigate()
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <footer className={classes.footer}>
@@ -69,30 +62,39 @@ function Footer() {
                 <Container maxWidth="lg">
                     <Grid container spacing={5}>
                         <Grid item xs={12} sm={4}>
-                            <Box borderBottom={1}>Help</Box>
+                            <Box borderBottom={1}>Contact</Box>
                             <Box>
-                                <p>test</p>
+                                <p>Tel: 0173 556 9080</p>
                             </Box>
                             <Box>
-                                <p>begeg</p>
+                                <p>Anfahrt:</p>
+                                <p>Edinsonstraße 30
+                                    90439 Nürnberg</p>
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Box borderBottom={1}>Account</Box>
                             <Box>
-                                <p>WOWOWO</p>
+                                <p>Shrek</p>
+                                {/**<button onClick={() => setIsOpen(true)} className={classes.btn}>Login</button>
+                                <Modal open={isOpen} title="Please login or create a new account" onClose={() => setIsOpen(false)} isFooter={true}/>
+                                <BasicModal open={isOpen} title="Please login or create a new account" onClose={() => setIsOpen(false)} isFooter={true}/>*/}
+                                <Typography className={classes.links} onClick={()=>navigate("/LoginPage")}>Login</Typography>
+                            </Box>
+                            <Box>
+                                <p>Cookie-Einstellungen</p>
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Box borderBottom={1}>Messages</Box>
-                            <Box>
-                                <p>WOWOWO</p>
+                            <Box borderBottom={1}>Neuigkeiten</Box>
+                            <Box className={classes.linkBox}>
+                               <a className={classes.links} href='https://www.th-nuernberg.de/person/trommler-peter/'>Blog</a>
                             </Box>
-                            <Box>
-                                <p>WOWOWO</p>
+                            <Box className={classes.linkBox}>
+                                <a className={classes.links} href="https://.instagram.com/pornhub/?hl=de">Instagram</a>  
                             </Box>
-                            <Box>
-                                <p>begeg</p>
+                            <Box className={classes.linkBox}>
+                                <a className={classes.links} href="https://www.instagram.com/wernerfrankfurt/?hl=en">Events</a>
                             </Box>
                         </Grid>
                     </Grid>

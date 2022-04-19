@@ -28,8 +28,8 @@ const useStyles = makeStyles({
   text: {
     fontSize: 15,
     margin: '0.3%',
-    paddingLeft: '5%',
-    paddingRight: '5%',
+    paddingLeft: '6.5%',
+    paddingRight: '6.5%',
     textAlign: 'justify'
   }
 })
