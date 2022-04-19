@@ -63,10 +63,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Startseite />}/>
         <Route path="/Unsere%20Etablisments" element={<UnsereEtablisments/>}/>
-        <Route path="/Services%20und%20Dienstleistungen" element={<UnsereDienstleister/>}/>
-        <Route path="/Unsere%20Dienstleister" element={<ServicesUndDienstleistungen/>}/>
+        <Route path="/Unsere%20Dienstleister" element={<UnsereDienstleister/>}/>
+        <Route path="/Services%20und%20Dienstleistungen" element={<ServicesUndDienstleistungen/>}/>
         <Route path="/LoginPage" element={<LoginPage/>}/>
-
+        
       </Routes>
     </BrowserRouter>
   );

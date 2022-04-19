@@ -3,6 +3,7 @@ import React from 'react'
 import ContentBox from '../Components/ContentBox'
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
+import ResponsiveAppBar from '../Components/ResAppbarMUI'
 import Title from '../Components/Title'
 
 
@@ -59,7 +60,8 @@ function UnsereDienstleister() {
     const classes = useStyles()
     return (
         <div>
-            <Header />
+            {/**<Header />*/}
+            <ResponsiveAppBar />
             <Title datenInput='Unsere Dienstleister' sizeInput={1} />
             <p className={classes.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate vel lacus sed vestibulum. Curabitur tempus porttitor nisl sit amet congue. Vestibulum vestibulum interdum magna eu ullamcorper. In semper rutrum orci, vitae varius urna maximus elementum. Duis mollis tempor eros. Proin luctus, purus eu fermentum feugiat, diam ante auctor tellus, ut tristique nisi quam tempus lorem. Etiam rhoncus quam ut vehicula porta. Integer eu odio sem. In ultrices iaculis urna, ut suscipit metus vehicula ac. Etiam gravida tortor vel scelerisque semper. Integer viverra, enim vitae ullamcorper tincidunt, felis magna congue enim, in congue felis arcu a ex. Pellentesque arcu risus, semper id lacus quis, congue egestas erat.
 
