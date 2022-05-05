@@ -6,7 +6,6 @@ import { Container } from '@mui/material';
 import { Box } from '@mui/material';
 import {Link, Route, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
-import Modal from './Modal';
 import BasicModal from './BasicModal';
 
 
@@ -34,7 +33,14 @@ const useStyles = makeStyles({
     },
     links: {
         color: 'rgba(150,25,15,1)',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        marginTop:'4%', 
+        cursor: 'default',
+        '&:hover': {
+            borderRadius: 30,
+            color: 'rgba(160,160,160,1)',
+            fontSize: 18
+          }
     },
     btn: {
         color: 'white',
@@ -74,9 +80,10 @@ function Footer() {
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Box borderBottom={1}>Account</Box>
-                            <Box>
-                                <p>Shrek</p>
-                                {/**<button onClick={() => setIsOpen(true)} className={classes.btn}>Login</button>
+                            <Box className={classes.linkBox}>
+                            <Typography className={classes.links} onClick={()=>navigate("/TestPage")}>Testpage</Typography>
+                            </Box>
+                            <Box className={classes.linkBox}>                                {/**<button onClick={() => setIsOpen(true)} className={classes.btn}>Login</button>
                                 <Modal open={isOpen} title="Please login or create a new account" onClose={() => setIsOpen(false)} isFooter={true}/>
                                 <BasicModal open={isOpen} title="Please login or create a new account" onClose={() => setIsOpen(false)} isFooter={true}/>*/}
                                 <Typography className={classes.links} onClick={()=>navigate("/LoginPage")}>Login</Typography>
