@@ -3,11 +3,10 @@ import React, { useState } from 'react'
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
 import Title from '../Components/Title'
-import Modal from '../Components/Modal'
 import Login from '../Components/Login'
 import ResponsiveAppBar from '../Components/ResAppbarMUI'
-
-
+import monte from '../Backend/kuss-diga-monte.gif'
+import ContainerBox from '../Components/ContainerBox'
 
 const useStyles = makeStyles({
    
@@ -55,14 +54,18 @@ const useStyles = makeStyles({
 
     },
     modal: {
-        position: 'fixed',
         top: '50%',
         left: '50%',
-        transform: 'translate(-50%,-50%)',
-        backgroundColor: '#FFF',
-        padding: '50px',
-        zIndex: 1000
-    }
+        padding: '50px'
+    },
+    gif:{
+        height: '25%', 
+        width: '25%',
+        display: 'block',
+        margin: '5%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      }
 })
 
 
@@ -94,6 +97,7 @@ function LoginPage() {
 
                 Cras vitae laoreet mi. Curabitur at nunc odio. Donec vestibulum ornare tellus, at maximus mi dignissim sit amet. Aliquam ex enim, vehicula ut rutrum id, pellentesque id turpis. In sollicitudin cursus orci, vitae semper tortor volutpat a. Praesent volutpat commodo dictum. Curabitur molestie nunc nunc, vel faucibus ipsum facilisis non. In quam dolor, consequat sit amet magna a, ultrices auctor ex.</p>
             <Login/>
+            <img className={classes.gif} src={monte} alt='Kuss Digga...'/>
             <p className={classes.text}>Phasellus hendrerit risus sed risus feugiat egestas. Aenean mollis, nisi non rutrum pretium, massa turpis ornare nibh, sit amet ornare risus ante vel justo. Cras ut lorem ut ex sodales finibus. Fusce ut quam in lorem blandit volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi rhoncus cursus metus, at blandit turpis porta nec. Mauris finibus porttitor purus id mattis. Quisque ultricies nunc ligula, at elementum felis fringilla a. Nulla vitae eros porta, placerat nisi rhoncus, pulvinar ante. Duis sed gravida tellus. Sed egestas mollis magna, quis semper ex. Mauris faucibus hendrerit vulputate. Pellentesque quis erat maximus, venenatis enim vel, aliquam felis. Nulla gravida est ac risus dapibus, sed gravida libero venenatis.
 
                 Curabitur bibendum, nibh sit amet facilisis volutpat, arcu diam egestas nulla, vitae cursus augue nibh vitae quam. Fusce sit amet rhoncus sapien, vitae ornare arcu.</p>

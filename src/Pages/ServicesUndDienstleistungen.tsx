@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
 import Title from '../Components/Title'
-import Modal from '../Components/Modal'
 import BasicModal from '../Components/BasicModal'
 import ResponsiveAppBar from '../Components/ResAppbarMUI'
 
