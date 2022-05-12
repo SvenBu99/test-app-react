@@ -4,17 +4,20 @@ import Footer from '../Components/Footer'
 import ResponsiveAppBar from '../Components/ResAppbarMUI'
 import Title from '../Components/Title'
 import UploadButtons from '../Components/UploadButton'
-import IconButton from '@mui/material/IconButton';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
-import { styled } from '@mui/material/styles';
-
+import BasicModal from '../Components/BasicModal'
+import axios from 'axios'
+import { Button } from '@mui/material'
+import { useState } from 'react'
+import BackendModal from '../Components/BackendModal'
+import TextMobileStepper from '../Components/TextMobileStepper'
 
 const useStyles = makeStyles({
     cunt: {
         top: '1%',
         position: 'static',
         buttom: '99%',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: '1%'
     },
     text: {
         fontSize: 15,
@@ -41,10 +44,21 @@ const useStyles = makeStyles({
         }
     }
 })
+async function backEndCallGet(): Promise<any> {
+    const res = await axios.get("http://localhost:8080/api/posts/2022/05")
+    return res.data;
+    
+}
 
+async function backEndCallPost(): Promise<any> {
+    const res = await axios.post("http://localhost:8080/api/courses")
+    return res.data;
+    
+}
 
 function TestPage() {
     const classes = useStyles()
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <div className={classes.root}>
@@ -63,6 +77,32 @@ function TestPage() {
                 <div className={classes.cunt}>
                     <UploadButtons/>
                 </div>
+                <div className={classes.cunt}>
+                    <Button onClick={() => backEndCallGet().then((m) => console.log(m))}>Backend-Call-Get</Button>
+                </div>
+                <div className={classes.cunt}>
+                    <Button onClick={() => backEndCallPost().then((m) => console.log(m))}>Backend-Call-Post</Button>
+                </div>
+                <div className={classes.cunt}>
+                     <BackendModal open={isOpen} title="Enter the Name of the Animal used in Backend-Call" onClose={() => setIsOpen(false)} isFooter={false} />
+                </div>
+
+                <p className={classes.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate vel lacus sed vestibulum. Curabitur tempus porttitor nisl sit amet congue. Vestibulum vestibulum interdum magna eu ullamcorper. In semper rutrum orci, vitae varius urna maximus elementum. Duis mollis tempor eros. Proin luctus, purus eu fermentum feugiat, diam ante auctor tellus, ut tristique nisi quam tempus lorem. Etiam rhoncus quam ut vehicula porta. Integer eu odio sem. In ultrices iaculis urna, ut suscipit metus vehicula ac. Etiam gravida tortor vel scelerisque semper. Integer viverra, enim vitae ullamcorper tincidunt, felis magna congue enim, in congue felis arcu a ex. Pellentesque arcu risus, semper id lacus quis, congue egestas erat.
+
+                Curabitur bibendum, nibh sit amet facilisis volutpat, arcu diam egestas nulla, vitae cursus augue nibh vitae quam. Fusce sit amet rhoncus sapien, vitae ornare arcu. Ut vel diam id turpis sollicitudin placerat non ac arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse placerat neque elit. Fusce augue est, varius non nisi ac, molestie molestie justo. Pellentesque quis faucibus urna. Praesent dui odio, dignissim eu enim eget, lacinia porta turpis. Suspendisse nec erat vitae arcu bibendum pharetra nec a tellus. Ut vitae egestas magna. Fusce sed dictum nisi. Pellentesque eget orci ac turpis ullamcorper convallis. In lobortis ex sed nibh feugiat facilisis.
+
+                Cras vitae laoreet mi. Curabitur at nunc odio. Donec vestibulum ornare tellus, at maximus mi dignissim sit amet. Aliquam ex enim, vehicula ut rutrum id, pellentesque id turpis. In sollicitudin cursus orci, vitae semper tortor volutpat a. Praesent volutpat commodo dictum. Curabitur molestie nunc nunc, vel faucibus ipsum facilisis non. In quam dolor, consequat sit amet magna a, ultrices auctor ex.</p>
+
+                <TextMobileStepper/>
+                
+                
+                <p className={classes.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate vel lacus sed vestibulum. Curabitur tempus porttitor nisl sit amet congue. Vestibulum vestibulum interdum magna eu ullamcorper. In semper rutrum orci, vitae varius urna maximus elementum. Duis mollis tempor eros. Proin luctus, purus eu fermentum feugiat, diam ante auctor tellus, ut tristique nisi quam tempus lorem. Etiam rhoncus quam ut vehicula porta. Integer eu odio sem. In ultrices iaculis urna, ut suscipit metus vehicula ac. Etiam gravida tortor vel scelerisque semper. Integer viverra, enim vitae ullamcorper tincidunt, felis magna congue enim, in congue felis arcu a ex. Pellentesque arcu risus, semper id lacus quis, congue egestas erat.
+
+                Curabitur bibendum, nibh sit amet facilisis volutpat, arcu diam egestas nulla, vitae cursus augue nibh vitae quam. Fusce sit amet rhoncus sapien, vitae ornare arcu. Ut vel diam id turpis sollicitudin placerat non ac arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse placerat neque elit. Fusce augue est, varius non nisi ac, molestie molestie justo. Pellentesque quis faucibus urna. Praesent dui odio, dignissim eu enim eget, lacinia porta turpis. Suspendisse nec erat vitae arcu bibendum pharetra nec a tellus. Ut vitae egestas magna. Fusce sed dictum nisi. Pellentesque eget orci ac turpis ullamcorper convallis. In lobortis ex sed nibh feugiat facilisis.
+
+                Cras vitae laoreet mi. Curabitur at nunc odio. Donec vestibulum ornare tellus, at maximus mi dignissim sit amet. Aliquam ex enim, vehicula ut rutrum id, pellentesque id turpis. In sollicitudin cursus orci, vitae semper tortor volutpat a. Praesent volutpat commodo dictum. Curabitur molestie nunc nunc, vel faucibus ipsum facilisis non. In quam dolor, consequat sit amet magna a, ultrices auctor ex.</p>
+
+
             <Footer />
         </div>
 

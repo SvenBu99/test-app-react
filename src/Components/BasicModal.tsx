@@ -39,7 +39,7 @@ export default function BasicModal(props: { open: boolean, title: string, onClos
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ mt: 2 }} style={{textAlign: 'center'}}>
             {props.title}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{textAlign: 'center'}}>
