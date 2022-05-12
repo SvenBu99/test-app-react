@@ -4,12 +4,13 @@ import Footer from '../Components/Footer'
 import ResponsiveAppBar from '../Components/ResAppbarMUI'
 import Title from '../Components/Title'
 import UploadButtons from '../Components/UploadButton'
-import BasicModal from '../Components/BasicModal'
 import axios from 'axios'
 import { Button } from '@mui/material'
 import { useState } from 'react'
 import BackendModal from '../Components/BackendModal'
 import TextMobileStepper from '../Components/TextMobileStepper'
+import { Box } from '@mui/system'
+import testImg from '../Backend/Images/Logo.jpg'
 
 const useStyles = makeStyles({
     cunt: {
@@ -94,7 +95,6 @@ function TestPage() {
                 Cras vitae laoreet mi. Curabitur at nunc odio. Donec vestibulum ornare tellus, at maximus mi dignissim sit amet. Aliquam ex enim, vehicula ut rutrum id, pellentesque id turpis. In sollicitudin cursus orci, vitae semper tortor volutpat a. Praesent volutpat commodo dictum. Curabitur molestie nunc nunc, vel faucibus ipsum facilisis non. In quam dolor, consequat sit amet magna a, ultrices auctor ex.</p>
 
                 <TextMobileStepper/>
-                
                 
                 <p className={classes.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate vel lacus sed vestibulum. Curabitur tempus porttitor nisl sit amet congue. Vestibulum vestibulum interdum magna eu ullamcorper. In semper rutrum orci, vitae varius urna maximus elementum. Duis mollis tempor eros. Proin luctus, purus eu fermentum feugiat, diam ante auctor tellus, ut tristique nisi quam tempus lorem. Etiam rhoncus quam ut vehicula porta. Integer eu odio sem. In ultrices iaculis urna, ut suscipit metus vehicula ac. Etiam gravida tortor vel scelerisque semper. Integer viverra, enim vitae ullamcorper tincidunt, felis magna congue enim, in congue felis arcu a ex. Pellentesque arcu risus, semper id lacus quis, congue egestas erat.
 
