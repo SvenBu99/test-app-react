@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         margin: '0.3%',
         paddingLeft: '6.5%',
         paddingRight: '6.5%',
-        textAlign: 'justify'
+        textAlign: 'justify', 
     },
     root: {
         width: '100%'
@@ -101,7 +101,6 @@ function TestPage() {
                 Curabitur bibendum, nibh sit amet facilisis volutpat, arcu diam egestas nulla, vitae cursus augue nibh vitae quam. Fusce sit amet rhoncus sapien, vitae ornare arcu. Ut vel diam id turpis sollicitudin placerat non ac arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse placerat neque elit. Fusce augue est, varius non nisi ac, molestie molestie justo. Pellentesque quis faucibus urna. Praesent dui odio, dignissim eu enim eget, lacinia porta turpis. Suspendisse nec erat vitae arcu bibendum pharetra nec a tellus. Ut vitae egestas magna. Fusce sed dictum nisi. Pellentesque eget orci ac turpis ullamcorper convallis. In lobortis ex sed nibh feugiat facilisis.
 
                 Cras vitae laoreet mi. Curabitur at nunc odio. Donec vestibulum ornare tellus, at maximus mi dignissim sit amet. Aliquam ex enim, vehicula ut rutrum id, pellentesque id turpis. In sollicitudin cursus orci, vitae semper tortor volutpat a. Praesent volutpat commodo dictum. Curabitur molestie nunc nunc, vel faucibus ipsum facilisis non. In quam dolor, consequat sit amet magna a, ultrices auctor ex.</p>
-
 
             <Footer />
         </div>
