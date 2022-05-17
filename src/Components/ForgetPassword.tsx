@@ -9,6 +9,7 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import LockResetIcon from '@mui/icons-material/LockReset';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -28,13 +29,12 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
-export default function LoginOwn() {
+export default function ForgotPassword() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email: data.get('email')
     });
   };
 
@@ -54,10 +54,10 @@ export default function LoginOwn() {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
+            <LockResetIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Passwort zurücksetzen
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, maxWidth: "sm" }}>
 
@@ -75,28 +75,6 @@ export default function LoginOwn() {
                   sx={{ backgroundColor: 'white' }}
                 />
               </Grid>
-
-              <Grid item xs={12}>
-                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>Passwort</Typography>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                  sx={{ backgroundColor: 'white' }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <div style={{ display: 'flex' }}>
-                  <FormControlLabel
-                    control={<Checkbox value="remember" color="primary" />}
-                    label="Remember me"
-                    sx={{ display: 'flex', ml: 'auto', mr: 'auto' }}
-                  />
-                </div>
-              </Grid>
               <Grid item xs={12}>
 
                 <Button
@@ -105,13 +83,13 @@ export default function LoginOwn() {
                   variant="contained"
                   sx={{ mt: 4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto" }}
                 >
-                  Sign In
+                  Reset
                 </Button>
                 <Grid container justifyContent="center" sx={{ marginTop: '40px', marginBottom: '0px' }}>
-                <Grid container>
+                  <Grid container>
                     <Grid item xs>
                       <Link href="#" variant="body2">
-                        Passwort vergessen
+                        Zurück zum Login
                       </Link>
                     </Grid>
                     <Grid item>

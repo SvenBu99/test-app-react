@@ -7,6 +7,7 @@ import monte from '../Backend/kuss-diga-monte.gif'
 import SignUp from '../Components/SignUp'
 import SignUpOwn from '../Components/SignUpOwn'
 import LoginOwn from '../Components/LoginOwn'
+import ForgotPassword from '../Components/ForgetPassword'
 
 const useStyles = makeStyles({
    
@@ -85,6 +86,7 @@ function LoginPage() {
             <LoginOwn/>
                         
             <img className={classes.gif} src={monte} alt='Kuss Digga...'/>
+            <ForgotPassword/>
             <p className={classes.text}>Phasellus hendrerit risus sed risus feugiat egestas. Aenean mollis, nisi non rutrum pretium, massa turpis ornare nibh, sit amet ornare risus ante vel justo. Cras ut lorem ut ex sodales finibus. Fusce ut quam in lorem blandit volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi rhoncus cursus metus, at blandit turpis porta nec. Mauris finibus porttitor purus id mattis. Quisque ultricies nunc ligula, at elementum felis fringilla a. Nulla vitae eros porta, placerat nisi rhoncus, pulvinar ante. Duis sed gravida tellus. Sed egestas mollis magna, quis semper ex. Mauris faucibus hendrerit vulputate. Pellentesque quis erat maximus, venenatis enim vel, aliquam felis. Nulla gravida est ac risus dapibus, sed gravida libero venenatis.
 
                 Curabitur bibendum, nibh sit amet facilisis volutpat, arcu diam egestas nulla, vitae cursus augue nibh vitae quam. Fusce sit amet rhoncus sapien, vitae ornare arcu.</p>
