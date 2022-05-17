@@ -48,20 +48,20 @@ export default function SignUpOwn() {
                 <CssBaseline />
                 <Box
                     sx={{
-                        marginTop: 8,
+                        marginTop: 0,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        backgroundColor: 'rgba(205, 205, 205,0.25)',
+                        padding: '4%',
                         width: "100%"
                     }}
                 >
 
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3, maxWidth: "sm" }}>
                         <UploadButtons />
-                        <Grid container spacing={2}>
+                        <Grid container spacing={3}>
                             <Grid item xs={12} sm={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontStyle: 'bold'}}>Vorname</Typography>
+                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700'}}>Vorname</Typography>
                                 <TextField
                                     autoComplete="given-name"
                                     name="firstName"
@@ -69,11 +69,11 @@ export default function SignUpOwn() {
                                     fullWidth
                                     id="firstName"
                                     autoFocus
-                                    sx={{ backgroundColor: 'white' }}
+                                    sx={{ backgroundColor: 'white'}}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)' }}>Nachname</Typography>
+                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>Nachname</Typography>
                                 <TextField
                                     required
                                     fullWidth
@@ -84,7 +84,7 @@ export default function SignUpOwn() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)' }}>E-Mail</Typography>
+                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>E-Mail</Typography>
                                 <TextField
                                     required
                                     fullWidth
@@ -95,7 +95,7 @@ export default function SignUpOwn() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)' }}>E-Mail wiederholen</Typography>
+                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>E-Mail wiederholen</Typography>
                                 <TextField
                                     required
                                     fullWidth
@@ -106,7 +106,7 @@ export default function SignUpOwn() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)' }}>Telefon</Typography>
+                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>Telefon</Typography>
                                 <TextField
                                     required
                                     fullWidth
@@ -131,7 +131,7 @@ export default function SignUpOwn() {
 
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)' }}>Passwort</Typography>
+                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>Passwort</Typography>
                                 <TextField
                                     required
                                     fullWidth
@@ -143,13 +143,13 @@ export default function SignUpOwn() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)' }}>Passwort wiederholen</Typography>
+                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>Passwort wiederholen</Typography>
                                 <TextField
                                     required
                                     fullWidth
-                                    name="password"
+                                    name="password repeat"
                                     type="password"
-                                    id="password"
+                                    id="password repeat"
                                     autoComplete="new-password"
                                     sx={{ backgroundColor: 'white' }}
                                 />
