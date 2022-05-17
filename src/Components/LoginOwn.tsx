@@ -17,8 +17,8 @@ function Copyright(props: any) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://globaldigital.de/">
+        globaldigital
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -97,32 +97,35 @@ export default function LoginOwn() {
                   />
                 </div>
               </Grid>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto" }}
-              >
-                Sign In
-              </Button>
-              <Grid container justifyContent="center" sx={{ marginTop: '20px', marginBottom: '20px' }}>
-                <Grid container>
-                  <Grid item xs>
-                    <Link href="#" variant="body2">
-                      Passwort vergessen
-                    </Link>
-                  </Grid>
-                  <Grid item>
-                    <Link href="#" variant="body2">
-                      {"Noch kein Account? Sign Up"}
-                    </Link>
+              <Grid item xs={12}>
+
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto" }}
+                >
+                  Sign In
+                </Button>
+                <Grid container justifyContent="center" sx={{ marginTop: '40px', marginBottom: '0px' }}>
+                  <Grid container>
+                    <Grid item xs>
+                      <Link href="#" variant="body2">
+                        Passwort vergessen
+                      </Link>
+                    </Grid>
+                    <Grid item>
+                      <Link href="#" variant="body2">
+                        {"Noch kein Account? Sign Up"}
+                      </Link>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+        <Copyright sx={{ mt: 2, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
