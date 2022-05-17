@@ -40,14 +40,17 @@ export default function LoginOwn() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 12,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            padding: "5%",
+            width: '100%'
+
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -56,49 +59,65 @@ export default function LoginOwn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, maxWidth: "sm" }}>
+
+            <Grid container spacing={3}>
+
+
+              <Grid item xs={12}>
+                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>E-Mail</Typography>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  name="email"
+                  autoComplete="email"
+                  sx={{ backgroundColor: 'white' }}
+                />
               </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
+
+              <Grid item xs={12}>
+                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>Passwort</Typography>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                  sx={{ backgroundColor: 'white' }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <div style={{ display: 'flex' }}>
+                  <FormControlLabel
+                    control={<Checkbox value="remember" color="primary" />}
+                    label="Remember me"
+                    sx={{ display: 'flex', ml: 'auto', mr: 'auto' }}
+                  />
+                </div>
+              </Grid>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto" }}
+              >
+                Sign In
+              </Button>
+              <Grid container justifyContent="center" sx={{ marginTop: '20px', marginBottom: '20px' }}>
+                <Grid container>
+                  <Grid item xs>
+                    <Link href="#" variant="body2">
+                      Passwort vergessen
+                    </Link>
+                  </Grid>
+                  <Grid item>
+                    <Link href="#" variant="body2">
+                      {"Noch kein Account? Sign Up"}
+                    </Link>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </Box>

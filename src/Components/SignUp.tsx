@@ -111,9 +111,9 @@ export default function SignUpOwn() {
                                 <TextField
                                     required
                                     fullWidth
-                                    id="repeat_email"
-                                    name="email"
-                                    autoComplete="email"
+                                    id="telefon"
+                                    name="terlefon"
+                                    autoComplete="telefone"
                                     sx={{ backgroundColor: 'white' }}
                                 />
                             </Grid>
@@ -173,7 +173,7 @@ export default function SignUpOwn() {
                         </Grid>
                     </Box>
                 </Box>
-                <Copyright sx={{ mt: 2 }} />
+                <Copyright sx={{ mt: 0 }} />
             </Container>
         </ThemeProvider>
     );
