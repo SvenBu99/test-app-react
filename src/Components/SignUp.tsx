@@ -36,6 +36,8 @@ export default function SignUpOwn() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log({
+            prename: data.get('firstName'),
+            name: data.get('lastName'),
             email: data.get('email'),
             password: data.get('password'),
         });
@@ -70,7 +72,7 @@ export default function SignUpOwn() {
                                     fullWidth
                                     id="firstName"
                                     autoFocus
-                                    sx={{ backgroundColor: 'white' }}
+                                    sx={{ backgroundColor: 'white'}}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={12}>

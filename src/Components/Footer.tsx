@@ -88,6 +88,9 @@ function Footer() {
                                 <BasicModal open={isOpen} title="Please login or create a new account" onClose={() => setIsOpen(false)} isFooter={true}/>*/}
                                 <Typography className={classes.links} onClick={()=>navigate("/LoginPage")}>Login</Typography>
                             </Box>
+                            <Box className={classes.linkBox}>                                
+                                <Typography className={classes.links} onClick={()=>navigate("/SearchPage")}>Search Page</Typography>
+                            </Box>
                             <Box>
                                 <p>Cookie-Einstellungen</p>
                             </Box>
