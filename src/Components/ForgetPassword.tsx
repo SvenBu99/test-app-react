@@ -16,6 +16,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Copyright(props: any) {
   return (
+    <div style={{position: 'absolute', bottom: 0,  width: "100%"}}>
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://globaldigital.de/">
@@ -24,6 +25,7 @@ function Copyright(props: any) {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
+    </div>
   );
 }
 
@@ -53,7 +55,7 @@ export default function ForgotPassword() {
 
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, backgroundColor: 'rgba(58, 141, 170,255)' }}>
             <LockResetIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -65,7 +67,7 @@ export default function ForgotPassword() {
 
 
               <Grid item xs={12}>
-                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>E-Mail</Typography>
+                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto', fontWeight: '700' }}>E-Mail</Typography>
                 <TextField
                   required
                   fullWidth
@@ -81,19 +83,19 @@ export default function ForgotPassword() {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  sx={{ mt: 4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto" }}
+                  sx={{ mt: 4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto", backgroundColor: 'rgba(58, 141, 170,255)'}}
                 >
                   Reset
                 </Button>
                 <Grid container justifyContent="center" sx={{ marginTop: '40px', marginBottom: '0px' }}>
                   <Grid container>
                     <Grid item xs>
-                      <Link href="#" variant="body2">
+                      <Link href="/login" variant="body2">
                         Zurück zum Login
                       </Link>
                     </Grid>
                     <Grid item>
-                      <Link href="#" variant="body2">
+                      <Link href="/register" variant="body2">
                         {"Account erstellen"}
                       </Link>
                     </Grid>
@@ -103,7 +105,7 @@ export default function ForgotPassword() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 2, mb: 4 }} />
+        <Copyright sx={{ mt: 2, mb: 0 }} />
       </Container>
     </ThemeProvider>
   );

@@ -11,6 +11,8 @@ const BasicSelect = (props: {usedBy: string}) => {
 
   const handleChange = (event: SelectChangeEvent) => {
     setVal(event.target.value as string);
+    let currentVal = event.target.value;
+    return currentVal
   };
 
   if (props.usedBy == 'category'){
@@ -19,15 +21,15 @@ const BasicSelect = (props: {usedBy: string}) => {
       <FormControl fullWidth sx={{backgroundColor: 'white'}}>
         
         <Select
-          labelId="demo-simple-select-label"
+          labelId="demo-simple-select-label2"
           id="demo-simple-select"
           value={val}
           onChange={handleChange}
         >
-          <MenuItem value={10}>Stereoanlagen</MenuItem>
-          <MenuItem value={20}>Musikboxen</MenuItem>
-          <MenuItem value={30}>Plattenspieler</MenuItem>
-          <MenuItem value={40}>Zubehör</MenuItem>
+          <MenuItem value={'Stereoanlagen'}>Stereoanlagen</MenuItem>
+          <MenuItem value={'Musikboxen'}>Musikboxen</MenuItem>
+          <MenuItem value={'Plattenspieler'}>Plattenspieler</MenuItem>
+          <MenuItem value={'Zubehör'}>Zubehör</MenuItem>
           
         </Select>
       </FormControl>
@@ -45,9 +47,9 @@ const BasicSelect = (props: {usedBy: string}) => {
           value={val}
           onChange={handleChange}
         >
-          <MenuItem value={10}>Abholung</MenuItem>
-          <MenuItem value={20}>Standardversand</MenuItem>
-          <MenuItem value={30}>Eil-Versand</MenuItem>
+          <MenuItem value={'Abholung'}>Abholung</MenuItem>
+          <MenuItem value={'Standardversand'}>Standardversand</MenuItem>
+          <MenuItem value={'Eil-Versand'}>Eil-Versand</MenuItem>
           
         </Select>
       </FormControl>

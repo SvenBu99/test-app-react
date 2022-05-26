@@ -58,7 +58,7 @@ function SearchPage() {
 
             <SearchFilter/>
 
-            <Footer />
+
         </div>
 
     )

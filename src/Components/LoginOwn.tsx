@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Copyright(props: any) {
   return (
+    <div style={{position: 'absolute', bottom: 0,  width: "100%"}}>
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://globaldigital.de/">
@@ -23,12 +24,13 @@ function Copyright(props: any) {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
+    </div>
   );
 }
 
 const theme = createTheme();
 
-export default function LoginOwn() {
+export default function Login() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -53,11 +55,11 @@ export default function LoginOwn() {
 
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, backgroundColor: 'rgba(58, 141, 170,255)'}}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Anmelden
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, maxWidth: "sm" }}>
 
@@ -65,7 +67,7 @@ export default function LoginOwn() {
 
 
               <Grid item xs={12}>
-                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>E-Mail</Typography>
+                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto', fontWeight: '700' }}>E-Mail</Typography>
                 <TextField
                   required
                   fullWidth
@@ -77,7 +79,7 @@ export default function LoginOwn() {
               </Grid>
 
               <Grid item xs={12}>
-                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>Passwort</Typography>
+                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto', fontWeight: '700' }}>Passwort</Typography>
                 <TextField
                   required
                   fullWidth
@@ -88,7 +90,7 @@ export default function LoginOwn() {
                   sx={{ backgroundColor: 'white' }}
                 />
               </Grid>
-              <Grid item xs={12}>
+              {/*<Grid item xs={12}>
                 <div style={{ display: 'flex' }}>
                   <FormControlLabel
                     control={<Checkbox value="remember" color="primary" />}
@@ -96,26 +98,26 @@ export default function LoginOwn() {
                     sx={{ display: 'flex', ml: 'auto', mr: 'auto' }}
                   />
                 </div>
-              </Grid>
+              </Grid>*/}
               <Grid item xs={12}>
 
                 <Button
                   type="submit"
                   fullWidth
                   variant="contained"
-                  sx={{ mt: 4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto" }}
+                  sx={{ mt: 4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto", backgroundColor: 'rgba(58, 141, 170,255)'}}
                 >
-                  Sign In
+                  Anmelden
                 </Button>
                 <Grid container justifyContent="center" sx={{ marginTop: '40px', marginBottom: '0px' }}>
                 <Grid container>
                     <Grid item xs>
-                      <Link href="#" variant="body2">
+                      <Link href="/forgotPassword" variant="body2">
                         Passwort vergessen
                       </Link>
                     </Grid>
                     <Grid item>
-                      <Link href="#" variant="body2">
+                      <Link href="/register" variant="body2">
                         {"Account erstellen"}
                       </Link>
                     </Grid>
@@ -125,8 +127,10 @@ export default function LoginOwn() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 2, mb: 4 }} />
+        
       </Container>
+      <Copyright style={{ mt: 2, mb: 0 }} />
     </ThemeProvider>
+  
   );
 }

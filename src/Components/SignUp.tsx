@@ -16,6 +16,7 @@ import UploadButtons from './UploadButton';
 import { color } from '@mui/system';
 import RadioGroup from '@mui/material/RadioGroup';
 import Radio from '@mui/material/Radio';
+import { useState } from 'react';
 
 function Copyright(props: any) {
     return (
@@ -31,17 +32,45 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
-export default function SignUpOwn() {
+export default function SignUp() {
+    const [btnDisabled, setBtnDisabled] = useState(true)
+    const [errorTxt, setErrorTxt] = useState("")
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
-            prename: data.get('firstName'),
-            name: data.get('lastName'),
-            email: data.get('email'),
-            password: data.get('password'),
-        });
+        const firstName = data.get('firstName')
+        const lastName = data.get('lastName')
+        const email = data.get('email')
+        const telefone = data.get('telefone')
+        const sellerType = data.get('radio-buttons-group')
+        const password = data.get('password')
+        const repPassword = data.get('passwordRepeat')
+        let signUpArr = [firstName, lastName,email, telefone,sellerType,password]
+        console.log(signUpArr)
+        checkSubmitComplete(signUpArr)
+        checkPasswordValid(password,repPassword)
     };
+
+    const checkSubmitComplete = (arr: (FormDataEntryValue | null)[]) =>{
+        for (let item of arr) {
+            if (item === ''){
+                setBtnDisabled(true)
+                setErrorTxt("Bitte füllen Sie alle Felder aus")
+                break
+            }
+        }
+        return
+    }
+
+    const checkPasswordValid = (pw: any, repeatPw: any) => {
+        if (pw != repeatPw){
+            setErrorTxt("Die Passwörter stimmen nicht überein")
+            return
+        }
+    }
+
+
 
 
     return (
@@ -64,19 +93,19 @@ export default function SignUpOwn() {
                         
                         <Grid container spacing={3}>
                             <Grid item xs={12} sm={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700'}}>Vorname</Typography>
+                                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto' , fontWeight: '700'}}>Vorname</Typography>
                                 <TextField
                                     autoComplete="given-name"
                                     name="firstName"
-                                    required
                                     fullWidth
+                                    required
                                     id="firstName"
                                     autoFocus
-                                    sx={{ backgroundColor: 'white'}}
+                                    sx={{ backgroundColor: 'white' }}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>Nachname</Typography>
+                                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto' , fontWeight: '700' }}>Nachname</Typography>
                                 <TextField
                                     required
                                     fullWidth
@@ -87,7 +116,7 @@ export default function SignUpOwn() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>E-Mail</Typography>
+                                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto' , fontWeight: '700' }}>E-Mail</Typography>
                                 <TextField
                                     required
                                     fullWidth
@@ -98,7 +127,7 @@ export default function SignUpOwn() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>E-Mail wiederholen</Typography>
+                                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto' , fontWeight: '700' }}>E-Mail wiederholen</Typography>
                                 <TextField
                                     required
                                     fullWidth
@@ -109,12 +138,12 @@ export default function SignUpOwn() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>Telefon</Typography>
+                                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto' , fontWeight: '700' }}>Telefon</Typography>
                                 <TextField
                                     required
                                     fullWidth
-                                    id="telefon"
-                                    name="terlefon"
+                                    id="telefone"
+                                    name="telefone"
                                     autoComplete="telefone"
                                     sx={{ backgroundColor: 'white' }}
                                 />
@@ -123,7 +152,7 @@ export default function SignUpOwn() {
                                 
                                 <RadioGroup
                                     aria-labelledby="demo-radio-buttons-group-label"
-                                    defaultValue="female"
+                                    defaultValue="Privat"
                                     name="radio-buttons-group"
                                     row
                                 >
@@ -134,7 +163,7 @@ export default function SignUpOwn() {
 
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>Passwort</Typography>
+                                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto' , fontWeight: '700' }}>Passwort</Typography>
                                 <TextField
                                     required
                                     fullWidth
@@ -146,29 +175,32 @@ export default function SignUpOwn() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto' , fontWeight: '700' }}>Passwort wiederholen</Typography>
+                                <Typography sx={{ color: 'rgba(58, 141, 170,255)', fontFamily: 'Roboto' , fontWeight: '700' }}>Passwort wiederholen</Typography>
                                 <TextField
                                     required
                                     fullWidth
-                                    name="password repeat"
+                                    name="passwordRepeat"
                                     type="password"
-                                    id="password repeat"
+                                    id="passwordRepeat"
                                     autoComplete="new-password"
                                     sx={{ backgroundColor: 'white' }}
                                 />
                             </Grid>
                         </Grid>
+                        <Grid sx={{alignItems: 'center'}}>
+                            <p style={{color: 'rgba(207, 48, 48,1)', marginTop: '20px', marginBottom: '20px', textAlign: 'center'}}>{errorTxt}</p>
+                        </Grid>
                         <Button
                             type="submit"
                             fullWidth
                             variant="contained"
-                            sx={{ mt: 4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto" }}
+                            sx={{ mt:4, mb: 2, minHeight: "xs", height: "55px", fontSize: "25px", display: "flex", width: "65%", marginLeft: "auto", marginRight: "auto" , backgroundColor: 'rgba(58, 141, 170,255)' }}
                         >
                             Sign Up
                         </Button>
                         <Grid container justifyContent="center" sx={{ marginTop: '20px', marginBottom: '20px' }}>
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link href="/login" variant="body2">
                                     Sie haben bereits einen Account - Anmelden
                                 </Link>
                             </Grid>
