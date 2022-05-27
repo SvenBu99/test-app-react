@@ -67,8 +67,8 @@ const BasicSelect = (props: {usedBy: string}) => {
           value={val}
           onChange={handleChange}
         >
-          <MenuItem value={10}>Privatverkäufer</MenuItem>
-          <MenuItem value={20}>Gewerblicher Anbieter</MenuItem>
+          <MenuItem value={'Privatverkäufer'}>Privatverkäufer</MenuItem>
+          <MenuItem value={'Gewerblicher Anbieter'}>Gewerblicher Anbieter</MenuItem>
           
         </Select>
       </FormControl>
@@ -86,8 +86,8 @@ const BasicSelect = (props: {usedBy: string}) => {
           value={val}
           onChange={handleChange}
         >
-          <MenuItem value={10}>Sofortkauf</MenuItem>
-          <MenuItem value={20}>Auktion</MenuItem>
+          <MenuItem value={'Sofortkauf'}>Sofortkauf</MenuItem>
+          <MenuItem value={'Auktion'}>Auktion</MenuItem>
           
         </Select>
       </FormControl>
@@ -105,10 +105,10 @@ const BasicSelect = (props: {usedBy: string}) => {
           value={val}
           onChange={handleChange}
         >
-          <MenuItem value={10}>Neuste Angebote zuerst</MenuItem>
-          <MenuItem value={20}>Älteste Angebote zuerst</MenuItem>
-          <MenuItem value={30}>Günstigste Angebote zuerst</MenuItem>
-          <MenuItem value={40}>Teuerste Angebote zuerst</MenuItem>
+          <MenuItem value={'Neuste Angebote zuerst'}>Neuste Angebote zuerst</MenuItem>
+          <MenuItem value={'Älteste Angebote zuerst'}>Älteste Angebote zuerst</MenuItem>
+          <MenuItem value={'Günstigste Angebote zuerst'}>Günstigste Angebote zuerst</MenuItem>
+          <MenuItem value={'Teuerste Angebote zuerst'}>Teuerste Angebote zuerst</MenuItem>
           
         </Select>
       </FormControl>

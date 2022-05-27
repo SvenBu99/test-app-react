@@ -8,7 +8,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import BasicSelect from './BasicSelect';
 import { FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 
 
@@ -29,41 +28,60 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export default function SearchFilter() {
-    let searchValues: (string | number) [] = ['',1000000,'','','','','']
+    //Constant and Handler of Category
+    const [categoryVal, setCategoryVal] = React.useState('');
+    const handleChangeCategory = (event: SelectChangeEvent) => {
+        setCategoryVal(event.target.value as string);
+    };
 
-    const [val, setVal] = React.useState('');
+    //Constant and Handler of Shippment
+    const [shippmentVal, setShippmentVal] = React.useState('');
+    const handleChangeShippment = (event: SelectChangeEvent) => {
+        setShippmentVal(event.target.value as string);
+    };
+
+    //Constant and Handler of seller
+    const [sellerVal, setSellerVal] = React.useState('');
+    const handleChangeSeller = (event: SelectChangeEvent) => {
+        setSellerVal(event.target.value as string);
+    };
+
+    //Constant and Handler of offer
+    const [offerVal, setOfferVal] = React.useState('');
+    const handleChangeOffer = (event: SelectChangeEvent) => {
+        setOfferVal(event.target.value as string);
+    };
+
+    //Constant and Handler of order
+    const [orderVal, setOrderVal] = React.useState('');
+    const handleChangeOrder = (event: SelectChangeEvent) => {
+        setOrderVal(event.target.value as string);
+    };
+    
+    //Array with search parameters
+    let searchValues: (FormDataEntryValue | null)[] = ['', '100000000', '', '', '', '', '']
 
     const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
+        //Retrieve Value of the two TextFields
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log({
             ort: data.get('ort'),
-            range: data.get('range'),
             price: data.get('price'),
-            category: data.get('category'),
-            shipping: data.get('shipping'),
-            seller: data.get('seller'),
-            offerType: data.get('offerType'),
-            order: data.get('order'),
         });
-        console.log(val)
-    };
 
-    const handleChange = (event: SelectChangeEvent) => {
-        setVal(event.target.value as string);
-        let currentVal = event.target.value;
-        console.log(currentVal)
-        
-    };
+        //Insert values of Select Fields in the Array
+        searchValues[0]=data.get('ort')
+        searchValues[1]=data.get('price')
+        searchValues[2]=categoryVal
+        searchValues[3]=shippmentVal
+        searchValues[4]=sellerVal
+        searchValues[5]=offerVal
+        searchValues[6]=orderVal
+        console.log(searchValues)
 
-    const handleTextChange = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            ort: data.get('ort'),
-            range: data.get('range'),
-        });
-    }
+    };
+    
 
     return (
         <ThemeProvider theme={theme}>
@@ -105,40 +123,95 @@ export default function SearchFilter() {
                             </Grid>
                             <Grid item xs={12}>
                                 <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>Kategorie</Typography>
-                                
-                                    <FormControl fullWidth sx={{ backgroundColor: 'white' }}>
 
-                                        <Select
-                                            labelId="demo-simple-select-label2"
-                                            id="demo-simple-select"
-                                            value={val}
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value={'Stereoanlagen'}>Stereoanlagen</MenuItem>
-                                            <MenuItem value={'Musikboxen'}>Musikboxen</MenuItem>
-                                            <MenuItem value={'Plattenspieler'}>Plattenspieler</MenuItem>
-                                            <MenuItem value={'Zubehör'}>Zubehör</MenuItem>
+                                <FormControl fullWidth sx={{ backgroundColor: 'white' }}>
 
-                                        </Select>
-                                    </FormControl>
-                               
+                                    <Select
+                                        labelId="demo-simple-select-label2"
+                                        id="demo-simple-select"
+                                        value={categoryVal}
+                                        onChange={handleChangeCategory}
+                                    >
+                                        <MenuItem value={'Stereoanlagen'}>Stereoanlagen</MenuItem>
+                                        <MenuItem value={'Musikboxen'}>Musikboxen</MenuItem>
+                                        <MenuItem value={'Plattenspieler'}>Plattenspieler</MenuItem>
+                                        <MenuItem value={'Zubehör'}>Zubehör</MenuItem>
+
+                                    </Select>
+                                </FormControl>
+
 
                             </Grid>
                             <Grid item xs={12}>
                                 <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>Versand</Typography>
-                                <BasicSelect usedBy='shipping' />
+                                {/*<BasicSelect usedBy='shipping' />*/}
+                                <FormControl fullWidth sx={{ backgroundColor: 'white' }}>
+
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        value={shippmentVal}
+                                        onChange={handleChangeShippment}
+                                    >
+                                        <MenuItem value={'Abholung'}>Abholung</MenuItem>
+                                        <MenuItem value={'Standardversand'}>Standardversand</MenuItem>
+                                        <MenuItem value={'Eil-Versand'}>Eil-Versand</MenuItem>
+
+                                    </Select>
+                                </FormControl>
                             </Grid>
                             <Grid item xs={12}>
                                 <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>Verkäufer</Typography>
-                                <BasicSelect usedBy='seller' />
+                                {/*<BasicSelect usedBy='seller' />*/}
+                                <FormControl fullWidth sx={{ backgroundColor: 'white' }}>
+
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        value={sellerVal}
+                                        onChange={handleChangeSeller}
+                                    >
+                                        <MenuItem value={'Privatverkäufer'}>Privatverkäufer</MenuItem>
+                                        <MenuItem value={'Gewerblicher Anbieter'}>Gewerblicher Anbieter</MenuItem>
+
+                                    </Select>
+                                </FormControl>
                             </Grid>
                             <Grid item xs={12}>
                                 <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>Angebotstyp</Typography>
-                                <BasicSelect usedBy='offerType' />
+                                {/*<BasicSelect usedBy='offerType' />*/}
+                                <FormControl fullWidth sx={{ backgroundColor: 'white' }}>
+
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        value={offerVal}
+                                        onChange={handleChangeOffer}
+                                    >
+                                        <MenuItem value={'Sofortkauf'}>Sofortkauf</MenuItem>
+                                        <MenuItem value={'Auktion'}>Auktion</MenuItem>
+
+                                    </Select>
+                                </FormControl>
                             </Grid>
                             <Grid item xs={12}>
                                 <Typography sx={{ color: 'rgba(0, 153, 255,0.57)', fontFamily: 'Roboto', fontWeight: '700' }}>Reihenfolge</Typography>
-                                <BasicSelect usedBy='order' />
+                                {/*<BasicSelect usedBy='order' />*/}
+                                <FormControl fullWidth sx={{ backgroundColor: 'white' }}>
+
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        value={orderVal}
+                                        onChange={handleChangeOrder}
+                                    >
+                                        <MenuItem value={'Neuste Angebote zuerst'}>Neuste Angebote zuerst</MenuItem>
+                                        <MenuItem value={'Älteste Angebote zuerst'}>Älteste Angebote zuerst</MenuItem>
+                                        <MenuItem value={'Günstigste Angebote zuerst'}>Günstigste Angebote zuerst</MenuItem>
+                                        <MenuItem value={'Teuerste Angebote zuerst'}>Teuerste Angebote zuerst</MenuItem>
+
+                                    </Select>
+                                </FormControl>
                             </Grid>
                         </Grid>
                         <Button

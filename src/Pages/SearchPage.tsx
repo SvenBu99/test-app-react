@@ -1,17 +1,8 @@
 import { makeStyles } from '@mui/styles'
-import React, { useEffect, useRef } from 'react'
-import Footer from '../Components/Footer'
 import ResponsiveAppBar from '../Components/ResAppbarMUI'
-import Title from '../Components/Title'
-import UploadButtons from '../Components/UploadButton'
-import axios from 'axios'
-import { Button } from '@mui/material'
-import { useState } from 'react'
-import BackendModal from '../Components/BackendModal'
-import TextMobileStepper from '../Components/TextMobileStepper'
-import { Box } from '@mui/system'
-import testImg from '../Backend/Images/Logo.jpg'
 import SearchFilter from '../Components/SearchFilter'
+import Title from '../Components/Title'
+
 
 const useStyles = makeStyles({
     cunt: {
