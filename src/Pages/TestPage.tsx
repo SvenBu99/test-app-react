@@ -11,6 +11,8 @@ import BackendModal from '../Components/BackendModal'
 import TextMobileStepper from '../Components/TextMobileStepper'
 import { Box } from '@mui/system'
 import testImg from '../Backend/Images/Logo.jpg'
+import TitleImage from '../Components/TitleImage'
+import DefaultCard from '../Components/DefaultCard'
 
 const useStyles = makeStyles({
     cunt: {
@@ -64,6 +66,8 @@ function TestPage() {
     return (
         <div className={classes.root}>
             <ResponsiveAppBar />
+            <TitleImage/>
+            <DefaultCard/>
             <Title datenInput='Unsere Testpage' sizeInput={1} />
             <p className={classes.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate vel lacus sed vestibulum. Curabitur tempus porttitor nisl sit amet congue. Vestibulum vestibulum interdum magna eu ullamcorper. In semper rutrum orci, vitae varius urna maximus elementum. Duis mollis tempor eros. Proin luctus, purus eu fermentum feugiat, diam ante auctor tellus, ut tristique nisi quam tempus lorem. Etiam rhoncus quam ut vehicula porta. Integer eu odio sem. In ultrices iaculis urna, ut suscipit metus vehicula ac. Etiam gravida tortor vel scelerisque semper. Integer viverra, enim vitae ullamcorper tincidunt, felis magna congue enim, in congue felis arcu a ex. Pellentesque arcu risus, semper id lacus quis, congue egestas erat.
 
